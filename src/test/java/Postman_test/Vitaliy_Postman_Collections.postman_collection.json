@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "ed17c8e9-9966-4e11-9fdf-4cdb41ffa804",
+		"name": "Vitaliy_Postman_Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_All(findAll)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d3117551-ffd2-435e-b62f-996aabbbbcb3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () \r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/Workers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Workers",
+						""
+					]
+				},
+				"description": "get_All"
+			},
+			"response": []
+		},
+		{
+			"name": "get_Workers(findWorkersById)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "923676c6-07a9-4c68-a874-a3f7ceca653a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () \r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Workers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Workers",
+						"2"
+					]
+				},
+				"description": "get_Workers"
+			},
+			"response": []
+		},
+		{
+			"name": "create_Workers(createWorkers)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dd8cd6a2-5340-4e14-9a91-bd075abf5125",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "336ff980-3933-4901-8922-b0161f74cab7",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"_First_Name_Workers\":\"Микола\",\"_Position_Workers\":\"junior\",\"_Second_Name_Workers\":\"Зубкін\",\"_Сompany_Workers\":\"ПАТ Рівне обл енерго \",\"_Workers_Id\":20}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Workers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Workers"
+					],
+					"query": [
+						{
+							"key": "\"_Workers_Id\"",
+							"value": "200,",
+							"disabled": true
+						},
+						{
+							"key": "\"_First_Name_Workers\"",
+							"value": "\"Микола\",",
+							"disabled": true
+						},
+						{
+							"key": "\"_Second_Name_Workers\"",
+							"value": "\"Зубкін\",",
+							"disabled": true
+						},
+						{
+							"key": "\"_Work_Experience_Workers\"",
+							"value": "5,",
+							"disabled": true
+						},
+						{
+							"key": "\"_Position_Workers\"",
+							"value": "\"junior\",",
+							"disabled": true
+						},
+						{
+							"key": "\"_Сompany_Workers\"",
+							"value": "\"ПАТ Рівне обл енерго\"",
+							"disabled": true
+						}
+					]
+				},
+				"description": "create_Workers"
+			},
+			"response": []
+		},
+		{
+			"name": "update_Workers(updateWorkers)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f2f0dab-a1cc-4d98-8b07-b070d16d47a9",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Workers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Workers",
+						""
+					]
+				},
+				"description": "update_Workers"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_Workers(deleteUser)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "97469af0-6eea-4259-a6e9-e4ef51cc8e9d",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Workers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Workers",
+						"1"
+					]
+				},
+				"description": "delete_Workers"
+			},
+			"response": []
+		},
+		{
+			"name": "View_First_pages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f010a85-d6c9-48b6-b6e3-06b2c5e1755c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () \r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				},
+				"description": "First pages"
+			},
+			"response": []
+		},
+		{
+			"name": "View_greeting(goAway)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c5bad3e-db2c-4df1-ade2-84d6c7b567a3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () \r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/goAway",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"goAway"
+					]
+				},
+				"description": "http://localhost:8080/goAway"
+			},
+			"response": []
+		},
+		{
+			"name": "View_home(second)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a2f3256-0740-442a-8c32-6c95ef422258",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () \r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/second",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"second"
+					]
+				},
+				"description": "http://localhost:8080/second"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
