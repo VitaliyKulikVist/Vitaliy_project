@@ -116,18 +116,12 @@ public void test()
         Workers worker = new Workers(1, "Вася","Пупкін",3,"senior","Рівне обл енерго");
         org.assertj.core.api.Assertions.assertThatThrownBy(() -> workers_Service_Impl.createWorkers(worker)).hasNoCause();
     }
-    private List<Workers> genWorkersList(){ return List.of(new Workers(1, "Вася","Пупкін",3,"senior","Рівне обл енерго"));}
-    private Workers genWorkers(){
-        return new Workers(1, "Вася","Пупкін",3,"senior","Рівне обл енерго");
-    }
-
     @Test
     public void updateWorkers()
     {
         Workers_Service_Impl updateWorkers_t =new Workers_Service_Impl();
 
     }
-
     @Test
     public void deleteUser()
     {
