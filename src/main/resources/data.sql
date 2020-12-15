@@ -22,3 +22,5 @@ insert into Position (Position_Id ,Name_Position,Rank_Position,Salary_Position)
 values (2, 'Job_ovec','junior',3000);
 insert into Position (Position_Id ,Name_Position,Rank_Position,Salary_Position)
 values (3, 'Rab','trainee',1000);
+
+//select * from Company where Сompany_Id = 5
